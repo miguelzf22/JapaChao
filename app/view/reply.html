@@ -1,0 +1,25 @@
+<!-- reply.html -->
+<form 
+enctype="multipart/form-data" 
+style="width: fit-content;
+border: 1px black solid; 
+padding: 1%;" 
+action="{{ url_for('lmao.responder' )}}" 
+onsubmit="return validarPost('responder-{{i[0]}}')" 
+name="responder-{{i[0]}}" 
+method="post"
+>
+    <h3>Responder:</h3>
+    <input type="hidden" name="id-post" value="{{ i[0] }}">
+    <input type="text" name="title" placeholder="Título">
+    <br>
+    <textarea name="msg" placeholder="Conteúdo do texto" required></textarea>
+    <br>
+    <label for="foto"><i>Envie uma mídia:</i></label>
+    <br>
+    <input type="file" name="foto" accept="image/png, image/jpeg">
+    <br>
+    <br>
+    <button type="submit">Enviar</button>
+    <p name="display"></p>
+</form>
